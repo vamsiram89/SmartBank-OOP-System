@@ -6,11 +6,7 @@ class BankAccount:
         self.AccountNumber = AccountNumber
         self.IFSC          = IFSC
         self.Balance       = Balance
-        
-        print("AccounName:    =", self.AccounName)
-        print("AccountNumber: =", self.AccountNumber)
-        print("IFSC:          =", self.IFSC)
-        print("Balance:       =", self.Balance)
+     
 
     def Deposit(self,Amount):
         self.Balance += Amount
@@ -24,6 +20,13 @@ class BankAccount:
     
     def CheckBalance(self):
         return self.Balance
+    def DisplayDetails(self):
+        print("\n----- Account Details -----")
+        print("Account Name   :", self.AccounName)
+        print("Account Number :", self.AccountNumber)
+        print("IFSC           :", self.IFSC)
+        print("Balance        :", self.Balance)
+        print("---------------------------")
         
 
 
@@ -37,7 +40,8 @@ while True:
     print("1. Deposit")
     print("2. Withdraw")
     print("3. Check Balance")
-    print("4. Exit")
+    print("4. customer Details")
+    print("5. EXit")
 
     choice = int(input("Enter your choice: "))
 
@@ -51,8 +55,11 @@ while True:
 
     elif choice == 3:
         print("Your Balance =", customer1.CheckBalance())
-
+        
     elif choice == 4:
+        customer1.DisplayDetails()
+        
+    elif choice == 5:
         print("Thank you! Exiting...")
         break
     
